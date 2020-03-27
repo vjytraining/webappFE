@@ -1,0 +1,11 @@
+---
+- name: copy .warfile from local to remote machine
+  copy:
+     src: flight-tracking-web.war
+     dest: /opt/tomcat/webapps
+
+- name: restarting tomcat service
+  service:
+    name: tomcat
+    state: restarted
+

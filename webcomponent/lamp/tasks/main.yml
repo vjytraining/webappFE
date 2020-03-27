@@ -1,0 +1,5 @@
+---
+- include_tasks: javajdk.yml
+- include_tasks: maven.yml
+- include_tasks: tom.yml
+

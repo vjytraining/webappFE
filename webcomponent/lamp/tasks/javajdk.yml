@@ -1,0 +1,10 @@
+---
+#- name: Update APT package manager repositories cache
+# apt:
+#   update_cache: yes
+
+- name: Install OpenJDK Java
+  apt:
+    name: openjdk-8-jdk
+    state: present
+
