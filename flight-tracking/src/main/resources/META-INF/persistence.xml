@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="FlightStatusPersistenceUnit"
+		transaction-type="JTA">
+		<description>Oracle Flights Status</description>
+		<jta-data-source>jdbc/FlightStatusDataSource</jta-data-source>
+		<class>com.hexaware.ttlh.hkia.flights.entity.FlightStatusPO</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="javax.persistence.jdbc.user" value="hkiaflightsdb"/>
+            <property name="javax.persistence.jdbc.password" value="hkiaflightsdbpassword"/>
+			<!-- OpenJPA specific properties -->
+			<property name="openjpa.TransactionMode" value="managed" />
+			<property name="openjpa.ConnectionFactoryMode" value="managed" />
+			<property name="openjpa.jdbc.DBDictionary" value="oracle" />
+			<property name="openjpa.Log" value="File=D:\IBM\WebSphere\AppServer\profiles\AppSrv01\logs\server1\openjpa.log, DefaultLevel=WARN, Runtime=INFO, Tool=INFO, SQL=TRACE"/>
+		</properties>
+	</persistence-unit>
+</persistence>
