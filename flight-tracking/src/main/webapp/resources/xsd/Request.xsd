@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ttlh.hexaware.com/hkia/flights/ws/request"
+	xmlns:req="http://ttlh.hexaware.com/hkia/flights/ws/request"
+	elementFormDefault="qualified" xmlns:dto="http://ttlh.hexaware.com/hkia/flights/ws/dto"
+	xmlns:base="http://ttlh.hexaware.com/hkia/flights/ws/common"
+	jaxb:version="2.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb">
+
+	<import schemaLocation="./Common.xsd"
+		namespace="http://ttlh.hexaware.com/hkia/flights/ws/common"></import>
+
+	<import schemaLocation="./DataTransferObjects.xsd"
+		namespace="http://ttlh.hexaware.com/hkia/flights/ws/dto"></import>
+
+	<element name="FlightStatusRequest">
+		<complexType>
+			<complexContent>
+				<extension base="base:Request">
+					<sequence>
+						<element name="airlineCode" type="string" maxOccurs="1" minOccurs="0"></element>
+						<element name="flightNumber" type="string" maxOccurs="1" minOccurs="0"></element>
+						<element name="departureAirportCode" type="string" maxOccurs="1" minOccurs="0"></element>
+						<element name="arrivalAirportCode" type="string" maxOccurs="1" minOccurs="0"></element>
+						<element name="scheduledDepartureDateTime" type="dto:DateTimeDTO" maxOccurs="1" minOccurs="0"></element>
+						<element name="scheduledArrivalDateTime" type="dto:DateTimeDTO" maxOccurs="1" minOccurs="0"></element>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+</schema>

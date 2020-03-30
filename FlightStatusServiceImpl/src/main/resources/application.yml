@@ -1,0 +1,16 @@
+
+server:
+  port: 8083
+  servlet:
+    contextPath: /flight-tracking
+spring:
+  datasource:
+    driverClassName: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@172.25.4.112:1521/xe
+    username: hkiaflightsdb
+    password: hkiaflightsdbpassword
+jpa:
+   hibernate:
+     ddl-auto: update
+     generate-ddl: true
+   show-sql: true

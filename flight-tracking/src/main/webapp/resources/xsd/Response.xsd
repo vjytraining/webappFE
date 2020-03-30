@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ttlh.hexaware.com/hkia/flights/ws/response"
+	xmlns:res="http://ttlh.hexaware.com/hkia/flights/ws/response" elementFormDefault="qualified"
+	xmlns:dto="http://ttlh.hexaware.com/hkia/flights/ws/dto" 
+	xmlns:base="http://ttlh.hexaware.com/hkia/flights/ws/common"
+	jaxb:version="2.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb">
+
+	<import schemaLocation="./Common.xsd" namespace="http://ttlh.hexaware.com/hkia/flights/ws/common"></import>
+
+	<import schemaLocation="./DataTransferObjects.xsd" namespace="http://ttlh.hexaware.com/hkia/flights/ws/dto"></import>
+
+	<element name="FlightStatusResponse">
+		<complexType>
+			<complexContent>
+				<extension base="base:Response">
+					<sequence>
+						<element name="flightStatus" type="dto:FlightStatusDTO" maxOccurs="unbounded" minOccurs="0"></element>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+</schema>
