@@ -1,8 +1,13 @@
 ---
-- name: copy .warfile from local to remote machine
+- name: Copying deploy.sh script to server
   copy:
-     src: flight-tracking-web.war
-     dest: /opt/tomcat/webapps
+     src: deploy.sh 
+     dest: /deploy.sh
+     mode: 0777
+
+- name: Execute the Script
+  become: true
+  command: sh /deploy.sh
 
 - name: restarting tomcat service
   service:

@@ -1,7 +1,0 @@
----
-
-- hosts: appservers
-  #remote_user: root
-  sudo: yes
-  roles:
-          - appserver
